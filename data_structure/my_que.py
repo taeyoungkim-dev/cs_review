@@ -1,22 +1,25 @@
+MEMORY_SIZE = 100
 class My_que:
 	def __init__(self,que_size):
-		self.body = []
-		self.size = 0
+		self.body = [None] * MEMORY_SIZE
+		self.head = 0
+		self.tail = 0
 		self.max_size = que_size
 	def push(self,num):
-		if self.size == que_size:
-			print("Queue is full")
+		if self.tail == MEMORY_SIZE :
+			raise Exception("Queue reached end of memory")
+		elif self.tail-self.head == que_size:
+			raise Exception("Queue is full")
 		else : 
-			self.body.append(num)
-			self.size += 1
+			self.body[self.tail] = num
+			self.tail += 1
 	def pop(self):
-		if self.size == 0:
-			print("Queue is empty")
+		if self.head == self.tail :
+			raise Exception("Queue is empty")
 		else :
-			self.size -= 1
-			return_value = self.body.pop(0)
-			return return_value
+			self.head += 1
+			return self.body[self.head - 1]
 	def get_size(self):
-		return self.size
+		return self.tail - self.head
 	def get_max_size(self):
 		return self.max_size 
