@@ -1,5 +1,6 @@
+DEFAULT_STACK_SIZE = 100
 class My_stack:
-    def __init__(self,stack_size=100):
+    def __init__(self,stack_size=DEFAULT_STACK_SIZE):
         self.__body = [0]*100 
         self.__tail = 0
         self.__max_size = stack_size
@@ -22,16 +23,16 @@ class My_stack:
 
 
 #Validation
-my_stack = My_stack(30)
-print(f"stack_size : {my_stack.get_size()}")
-print(f"stack_max_size : {my_stack.get_max_size()}")
-for i in range(31):
-    try:
-        my_stack.push(i)
-    except IndexError as e:
-        print(e)
-for _ in range(31):
-    try:
-        my_stack.pop()
-    except IndexError as e:
-        print(e)
+#my_stack = My_stack(30)
+#print(f"stack_size : {my_stack.get_size()}")
+#print(f"stack_max_size : {my_stack.get_max_size()}")
+#for i in range(31):
+#    try:
+#        my_stack.push(i)
+#    except IndexError as e:
+#        print(e)
+#for _ in range(31):
+#    try:
+#        my_stack.pop()
+#    except IndexError as e:
+#        print(e)

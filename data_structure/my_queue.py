@@ -1,7 +1,8 @@
-#TODO
+MEMORY_SIZE = 100
+DEFAULT_QUEUE_SIZE = 100
 class My_queue:
-    def __init__(self,queue_size=100):
-        self.__memory_size = 100
+    def __init__(self,queue_size=DEFAULT_QUEUE_SIZE):
+        self.__memory_size = MEMORY_SIZE
         self.__body = [0]*__memory_size
         self.__max_size = queue_size
         self.__head = 0
